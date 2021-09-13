@@ -246,6 +246,7 @@ const showProducts = (products) => {
     document.getElementById('all-products').appendChild(div)
   }
 }
+
 let count = 0
 const addToCart = (id, price) => {
   count = count + 1
@@ -302,5 +303,77 @@ const updateTotal = () => {
 
   document.getElementById('total').innerText = grandTotal.toFixed(2)
 }
+
+// const Rating = ({ value }) => {
+//   return (
+//     <div class='rating'>
+//       <span>
+//         <i
+//           style="color:#f8e825"
+//           class={
+//             value >= 1
+//               ? 'fas fa-star'
+//               : value >= 0.5
+//               ? 'fas fa-star-half-alt'
+//               : 'far fa-star'
+//           }
+//         ></i>
+//       </span>
+//       <span>
+//         <i
+//           style="color:#f8e825"
+//          class={
+//             value >= 2
+//               ? 'fas fa-star'
+//               : value >= 1.5
+//               ? 'fas fa-star-half-alt'
+//               : 'far fa-star'
+//           }
+//         ></i>
+//       </span>
+//       <span>
+//         <i
+//           style="color:#f8e825"
+//          class={
+//             value >= 3
+//               ? 'fas fa-star'
+//               : value >= 2.5
+//               ? 'fas fa-star-half-alt'
+//               : 'far fa-star'
+//           }
+//         ></i>
+//       </span>
+//       <span>
+//         <i
+//           style="color:#f8e825"
+//          class={
+//             value >= 4
+//               ? 'fas fa-star'
+//               : value >= 3.5
+//               ? 'fas fa-star-half-alt'
+//               : 'far fa-star'
+//           }
+//         ></i>
+//       </span>
+//       <span>
+//         <i
+//           style="color:#f8e825"
+//          class={
+//             value >= 5
+//               ? 'fas fa-star'
+//               : value >= 4.5
+//               ? 'fas fa-star-half-alt'
+//               : 'far fa-star'
+//           }
+//         ></i>
+//       </span>
+//       <span>{text && text}</span>
+//     </div>
+//   )
+// }
+
+// Rating.defaultProps = {
+//   color: '#f8e825',
+// }
 
 loadProducts()
