@@ -39,16 +39,7 @@ body {
 .product {
   margin: 20px;
 }
-.single-product {
-  padding: 10px;
-  transition: 0.6s;
-}
-.single-product:hover {
-  box-shadow: 4px 4px 7px gray;
-  border-radius: 10px;
-  border: 1px solid cyan;
-  background: yellowgreen;
-}
+
 
 /* ------------------------------- card style ------------------------------- */
 .flip-card {
