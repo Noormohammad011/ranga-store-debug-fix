@@ -210,6 +210,8 @@ const loadProducts = () => {
   showProducts(data)
 }
 
+const characterCount = 40
+
 // show all product in UI
 const showProducts = (products) => {
   console.log(products)
@@ -217,19 +219,30 @@ const showProducts = (products) => {
   for (const product of allProducts) {
     const image = product.image
     const div = document.createElement('div')
+    // const classArray = ['col-md-2']
     div.classList.add('product')
-    div.innerHTML = `<div class="single-product card h-100 ">
-      <div>
-    <img class="product-image " src=${image}></img>
-      </div>
-      <h3>${product.title}</h3>
-      <p>Category: ${product.category}</p>
-      <h2>Price: $ ${product.price}</h2>
-      <h3>Rating: ${product.rating.rate}</h3>
-      <h4>Totall Rating Count:${product.rating.count}</h4>
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
-      <button id="details-btn" class="btn btn-danger">Details</button></div>
-      `
+    div.innerHTML += `
+          <div class="flip-card">
+             <div class="flip-card-inner">
+               <div class="flip-card-front">
+                <img src=${image} style="width:300px;height:300px;">
+              </div>
+              <div class="flip-card-back">
+                <h3>${
+                  product.title.slice(0, characterCount) +
+                  (product.title.length > characterCount ? '...' : '')
+                }</h3>
+                <h4>Category: ${product.category}</h4>
+                <p>Price: $ ${product.price}</p>
+                <p>Rating: ${product.rating.rate}</p>
+                <p>Total Rating Count:${product.rating.count}</p>
+                <p><button onclick="addToCart(${product.id},${
+      product.price
+    })" id="addToCart-btn">Add to Cart</button></p>
+              </div>
+            </div>
+          </div>
+    `
     document.getElementById('all-products').appendChild(div)
   }
 }
